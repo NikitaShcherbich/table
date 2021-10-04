@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <app-action-field class="addition-field"></app-action-field>
+      <app-action-field class="addition-field"></app-action-field>
+      
+      <app-header-field *ngFor="let header of headerConfig" [config]="header" (sort)="sortColumn($event)">
+      </app-header-field>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of data">
+      <app-action-field (click)="onAddItem(item)" class="delete-field">Add</app-action-field>
+      <app-action-field (click)="onDeleteItem(item)" class="delete-field">Delete</app-action-field>
+      <app-table-field
+        *ngFor="let itemConfig of bodyConfig"
+        [(value)]="item[itemConfig.field]"
+        [isEditable]="itemConfig.editable"
+        [inputType]="itemConfig.type"
+      >
+      </app-table-field>
+    </tr>
+  </tbody>
+</table>

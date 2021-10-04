@@ -1,0 +1,9 @@
+<ng-container *ngIf="!isEdit; else elseBlock">{{ value }}</ng-container>
+<ng-template #elseBlock
+  ><input
+    [type]="inputType"
+    [(ngModel)]="value"
+    (click)="onInputClick($event)"
+    (mouseleave)="onMouseLeave()"
+    class="field-input"
+/></ng-template>

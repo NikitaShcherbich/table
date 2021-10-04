@@ -1,0 +1,17 @@
+:host {
+  display: table-cell;
+  vertical-align: inherit;
+  padding: 10px 20px;
+  background: #f8e391;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+}
+
+:host:hover {
+  background: #f8e49191;
+}
+
+:host:last-child {
+  border-right: none;
+}
